@@ -1,0 +1,10 @@
+.card {
+    height: 150px;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+.card:hover {
+    background-color: black;
+    cursor: pointer;
+}
