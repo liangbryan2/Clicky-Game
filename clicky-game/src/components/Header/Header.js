@@ -9,14 +9,6 @@ const Header = props => (
       amount of points you can get is 12. Good Luck!
     </p>
     <hr className="my-4" />
-    <div className="row">
-      <p className="col-6">
-        Current Score: <span>{props.current}</span>
-      </p>
-      <p className="col-6">
-        Highest Score: <span>{props.highest}</span>
-      </p>
-    </div>
   </div>
 );
 
