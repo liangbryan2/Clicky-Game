@@ -40,12 +40,14 @@ class App extends Component {
 
   clickImage = id => {
     if (this.state.clickedCards[id]) {
+      this.setState({ message: "You guessed incorrectly", class: "red" });
       this.resetCurrent();
       if (this.state.current > this.state.highest) {
         this.setState({ highest: this.state.current });
         this.resetCurrent();
       }
     } else {
+      this.setState({ message: "You guessed correctly", class: "green" });
       const clickedCards = this.state.clickedCards;
       clickedCards[id] = true;
       let length = Object.keys(this.state.clickedCards).length;
@@ -60,7 +62,12 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Nav current={this.state.current} highest={this.state.highest} message={this.state.message}/>
+        <Nav
+          current={this.state.current}
+          highest={this.state.highest}
+          message={this.state.message}
+          class={this.state.class}
+        />
         <Header />
         <div className="container">
           <div className="row">
