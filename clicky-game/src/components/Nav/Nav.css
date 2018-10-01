@@ -1,12 +1,30 @@
 nav p {
-    text-align: right;
-    color: white;
+  text-align: right;
+  color: white;
 }
 
 .red {
-    color: red;
+  color: red;
+  animation: red-flash 0.8s;
 }
 
 .green {
-    color: rgb(0, 177, 0);
+  color: rgb(0, 177, 0);
+  animation: green-flash 0.8s;
+}
+
+@keyframes red-flash {
+    from {
+        color: white;
+    } to {
+        color: red;
+    }
+}
+
+@keyframes green-flash {
+    from {
+        color: white;
+    } to {
+        color: green;
+    }
 }

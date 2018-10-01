@@ -4,6 +4,8 @@ import Card from "./components/Card/Card";
 import cards from "./cards.json";
 import Header from "./components/Header/Header";
 import Nav from "./components/Nav/Nav";
+import Modal from "./components/Modal/Modal";
+import Wrapper from "./components/Wrapper/Wrapper";
 
 class App extends Component {
   state = {
@@ -11,7 +13,14 @@ class App extends Component {
     highest: 0,
     current: 0,
     cards: cards,
-    message: "Click an image to start."
+    message: "Click an image to start.",
+    class: "test",
+    display: "none",
+    score: 0
+  };
+
+  closeModal = () => {
+    this.setState({ display: "none" });
   };
 
   resetCurrent = () => {
@@ -39,8 +48,13 @@ class App extends Component {
   };
 
   clickImage = id => {
+    this.setState({ score: this.state.current })
     if (this.state.clickedCards[id]) {
-      this.setState({ message: "You guessed incorrectly", class: "red" });
+      this.setState({
+        message: "You guessed incorrectly",
+        class: "red",
+        display: "block"
+      });
       this.resetCurrent();
       if (this.state.current > this.state.highest) {
         this.setState({ highest: this.state.current });
@@ -61,7 +75,7 @@ class App extends Component {
 
   render() {
     return (
-      <div>
+      <Wrapper closeModal={this.closeModal}>
         <Nav
           current={this.state.current}
           highest={this.state.highest}
@@ -82,7 +96,13 @@ class App extends Component {
             ))}
           </div>
         </div>
-      </div>
+        <Modal
+          display={this.state.display}
+          current={this.state.score}
+          highest={this.state.highest}
+          closeModal={this.closeModal}
+        />
+      </Wrapper>
     );
   }
 }
