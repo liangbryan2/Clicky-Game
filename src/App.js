@@ -15,12 +15,12 @@ class App extends Component {
     cards: cards,
     message: "Click an image to start.",
     class: "test",
-    display: "none",
+    display: "hidden",
     score: 0
   };
 
   closeModal = () => {
-    this.setState({ display: "none" });
+    this.setState({ display: "up" });
   };
 
   resetCurrent = () => {
@@ -53,7 +53,7 @@ class App extends Component {
       this.setState({
         message: "You guessed incorrectly",
         class: "red",
-        display: "block"
+        display: "down"
       });
       this.resetCurrent();
       if (this.state.current > this.state.highest) {

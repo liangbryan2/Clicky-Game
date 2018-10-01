@@ -9,6 +9,7 @@ const Modal = props => (
     role="dialog"
     aria-labelledby="Score"
     aria-hidden="false"
+    // style={{display:props.display}}
   >
     <div className="modal-dialog modal-dialog-centered" role="document">
       <div className="modal-content">

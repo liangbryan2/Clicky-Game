@@ -1,6 +1,6 @@
 @keyframes modalFade {
   from {
-    transform: translateY(-50%);
+    transform: translateY(-100%);
     opacity: 0;
   }
   to {
@@ -9,13 +9,13 @@
   }
 }
 
-.block {
+.down {
   display: block;
   animation-name: modalFade;
   animation-duration: 0.3s;
 }
 
-.none {
+.up {
   display: block;
   animation: modalFadeUp;
   animation-duration: 0.3s;
@@ -28,7 +28,11 @@
     opacity: 1;
   }
   to {
-    transform: translateY(-50%);
+    transform: translateY(-100%);
     opacity: 0;
   }
+}
+
+.hidden {
+  display: none;
 }
