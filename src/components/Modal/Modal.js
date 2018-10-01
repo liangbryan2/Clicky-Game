@@ -3,13 +3,12 @@ import "./Modal.css";
 
 const Modal = props => (
   <div
-    className="modal fade show"
+    className={`modal ${props.display}`}
     id="Score"
     tabIndex="-1"
     role="dialog"
     aria-labelledby="Score"
     aria-hidden="false"
-    style={{display: props.display}}
   >
     <div className="modal-dialog modal-dialog-centered" role="document">
       <div className="modal-content">
