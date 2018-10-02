@@ -6,7 +6,7 @@ Clicky memory game built on React.js
 
 The goal of the game is to click on an image that you have not clicked on before. Everytime you click on an image, the order is randomized to add a challenge. There are 12 total images, so if you hit all 12, you win.
 
-![index](./screenshots/index.png)
+![index](https://raw.githubusercontent.com/liangbryan2/Clicky-Game/master/Screenshots/index.png)
 
 ## Getting Started
 
